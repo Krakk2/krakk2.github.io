@@ -1,0 +1,970 @@
+* {
+  box-sizing: border-box;
+}
+@font-face {
+  font-family: 'Proxima Nova';
+  src: url('../fonts/Proxima Nova Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Proxima Nova Bold';
+  src: url('../fonts/Proxima Nova Bold.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Proxima Nova Light';
+  src: url('../fonts/Proxima Nova Light.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Proxima Nova Semibold';
+  src: url('../fonts/Proxima Nova Semibold.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Proxima Nova', sans-serif;
+  min-width: 480px;
+  font-size: 15px;
+  background-color: #202020;
+}
+a {
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+.cf:before,
+.cf:after {
+  content: " ";
+  /* 1 */
+  display: table;
+  /* 2 */
+}
+.cf:after {
+  clear: both;
+}
+.cf {
+  *zoom: 1;
+}
+.top {
+
+  background-image: url(http://erbaev.ru/template/img/city.jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-color: #202020;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+}
+.topback {
+  display: block;
+  position: relative;
+  top: 0;
+  width: 100%;
+  z-index: 3;
+}
+.paralax {
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+  top: 0;
+}
+.gradient {
+  position: absolute;
+  width: 100%;
+  height: 100px;
+  top: 0;
+  z-index: 4;
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0, 0, 0, 0.85)), color-stop(100%, rgba(0, 0, 0, 0)));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0) 100%);
+  /* Chrome10+,Safari5.1+ */
+  /* Opera 11.10+ */
+  /* IE10+ */
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0) 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#a6000000', endColorstr='#00000000', GradientType=0);
+  /* IE6-9 */
+}
+/* Верхнее меню */
+.topmenu_box {
+  position: fixed;
+  z-index: 300;
+  top: 0;
+  width: 100%;
+  left: 0;
+  background: rgba(0, 148, 213, 0.0);
+}
+@media (max-width: 860px) {
+  .topmenu_box {
+    min-height: 65px;
+  }
+}
+.burger {
+  display: none;
+  background: url("http://erbaev.ru/template/img/burger.png") no-repeat;
+  background-size: 35px;
+  width: 35px;
+  height: 35px;
+  position: absolute;
+  left: 15px;
+  top: 15px;
+}
+@media (max-width: 860px) {
+  .burger {
+    display: block;
+  }
+}
+.topmenu {
+  list-style: none;
+  margin: 0 auto;
+  padding: 14px 10px;
+  width: 100%;
+  max-width: 1200px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+@media (max-width: 860px) {
+  .topmenu {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+                -ms-grid-row-align: flex-start;
+            align-items: flex-start;
+    display: none;
+    padding-top: 65px;
+  }
+}
+.topmenu_active {
+  background: rgba(0, 148, 213, 1) !important;
+}
+@media (max-width: 860px) {
+  .topmenu li {
+    display: block;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}
+.topmenu li a {
+  text-decoration: none;
+  color: #505050;
+  font-size: 15px;
+  text-transform: uppercase;
+  margin: 0 10px ;
+  border-bottom: 2px solid transparent;
+  padding-bottom: 10px;
+}
+.topmenu li a:hover {
+  border-bottom: 2px solid #505050;
+}
+#logo {
+  font-size: 17px;
+  background-image: url(http://erbaev.ru/template/img/logo.png);
+  background-repeat: no-repeat;
+  position: relative;
+  width: 160px;
+  height: 65px;
+  display: block;
+  padding-bottom: 0;
+}
+#login:hover,
+#logo:hover {
+  border-bottom: 2px solid transparent;
+}
+#login {
+  padding: 12px 22px;
+  border-radius: 22px;
+  border: 2px solid #202020;
+  margin-right: 35px;
+}
+@media (max-width: 860px) {
+  #login {
+    margin-top: 10px;
+    display: inline-block;
+  }
+}
+#login:hover {
+  background-color: #505050;
+  border: 2px solid #505050;
+  color: #202020;
+}
+/* Как начать играть */
+.start {
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 200px;
+  width: 600px;
+  height: 328px;
+  color: #505050;
+}
+.start_title {
+  font-size: 60px;
+  height: 70px;
+  display: block;
+  font-weight: 300;
+  color: #505050;
+}
+.start_text {
+  color: #505050;
+  margin-bottom: 60px;
+}
+.num {
+  width: 40px;
+  height: 40px;
+  border: 1px dotted #505050;
+  border-radius: 20px;
+  position: absolute;
+}
+.num span {
+  display: block;
+  font-size: 30px;
+  color: #505050;
+  font-weight: bold;
+}
+/* Донат */
+.donat {
+  z-index: 3;
+  top: 200%;
+  background-color: #505050;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  padding: 15px;
+  text-align: center;
+}
+.go_title {
+  font-size: 60px;
+  height: 70px;
+  display: block;
+  font-weight: 100;
+  color: #000;
+  margin-bottom: 60px;
+  margin-top: 0;
+  font-family: 'Proxima Nova Light', serif;
+}
+.check_server {
+  width: 320px;
+  height: 35px;
+  -moz-appearance: none;
+  -webkit-border-radius: 1px;
+  -moz-border-radius: 1px;
+  border-radius: 1px;
+  border: 0;
+  border-bottom: 1px solid #202020;
+  cursor: pointer;
+  outline: none;
+  font-family: Proxima Nova;
+  font-weight: 100;
+  font-size: 16px;
+  -webkit-appearance: none;
+  color: #202020;
+  margin-bottom: 26px;
+  transition: all 0.15s easy-in-out;
+  -webkit-transition: all 0.15s ease-in-out;
+  -moz-transition: all 0.15s ease-in-out;
+  -webkit-box-shadow: 0px 0px 0px #00a3b6;
+  -moz-box-shadow: 0px 0px 0px #00a3b6;
+	
+}
+.check_server option {
+	
+}
+.dform {
+  width: 320px;
+  height: 35px;
+  border: 0;
+  border-bottom: 1px solid #202020;
+  font-family: Proxima Nova;
+  font-weight: 100;
+  font-size: 16px;
+  outline: none;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 30px;
+  background-color: transparent;
+  color: #202020;
+}
+@media (max-width: 860px) {
+  .dform {
+    width: 280px;
+  }
+}
+.dbutton {
+  width: 144px;
+  height: 42px;
+  border: 1px solid #cceaf7;
+  font-size: 12px;
+  display: block;
+  text-decoration: none;
+  color: #202020;
+  border-radius: 22px;
+  text-transform: uppercase;
+  margin: 0 auto;
+  background-color: #cceaf7;
+  margin-bottom: 10px;
+  cursor:pointer;
+}
+.dbutton_text {
+  padding-top: 4px;
+  display: block;
+}
+.dbutton:hover {
+  background-color: transparent;
+}
+.icon_nic,
+.icon_money {
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  margin-top: -63px;
+  margin-left: -170px;
+}
+.instructions {
+  text-align: left;
+  margin: 0 auto;
+  margin-top: 70px;
+  margin-bottom: 70px;
+  color: #505050;
+}
+.regular {
+  margin: 0 auto;
+  padding: 25px;
+  width: 540px;
+}
+.insthead {
+  font-size: 14px;
+}
+.instruction {
+  text-decoration: none;
+  color: #202020;
+  font-size: 16px;
+  border-bottom: 1px dotted #202020;
+  font-weight: 100;
+}
+.instruction:hover {
+  border-bottom: 1px dotted transparent;
+}
+.inst {
+  display: block;
+  font-size: 14px;
+}
+/* Промо */
+.promo {
+  position: relative;
+  text-align: center;
+  margin: 0 auto;
+  padding: 15px;
+  max-width: 700px;
+  max-height: 350px;
+}
+.promo_title {
+  font-size: 40px;
+  font-family: Proxima Nova Light;
+  text-transform: uppercase;
+  color: #505050;
+}
+@media (max-width: 860px) {
+  .promo_title {
+    font-size: 25px;
+  }
+}
+.button_begin {
+  padding: 16px 20px;
+  background-color: #505050;
+  color: #202020;
+  text-transform: uppercase;
+  font-size: 15px;
+  border: 1px solid transparent;
+  border-radius: 28px;
+  outline: none;
+  cursor: pointer;
+  font-family: Proxima Nova;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  display: inline-block;
+  text-decoration: none;
+}
+.button_begin:hover {
+  background-color: transparent;
+  border: 1px solid #505050;
+  color: #505050;
+}
+.man {
+  position: absolute;
+  right: 0;
+  top: 250px;
+  width: 450px;
+}
+.ne_active {
+  top: 0;
+}
+.soc {
+  width: 144px;
+  margin: 0 auto;
+}
+.you,
+.vk {
+  display: block;
+  width: 52px;
+  height: 52px;
+  border: 2px solid #6eb8da;
+  border-radius: 27px;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.you {
+  float: left;
+  background-image: url(http://erbaev.ru/template/img/you.png);
+}
+.vk {
+  float: right;
+  background-image: url(http://erbaev.ru/template/img/vk.png);
+}
+.you:hover,
+.vk:hover {
+  border: 2px solid #505050;
+}
+.sc_box {
+  width: 100%;
+  height: 35px;
+  position: absolute;
+  margin-bottom: 2%;
+  bottom: 0;
+}
+.scroll {
+  display: block;
+  position: absolute;
+  bottom: 25px;
+  left: 50%;
+  margin-left: -12px;
+  width: 24px;
+  height: 35px;
+  background-image: url(http://erbaev.ru/template/img/scroll.png);
+  background-repeat: no-repeat;
+  opacity: 0.8;
+}
+.scroll:hover {
+  opacity: 1;
+}
+/* Нижний */
+.bottom {
+  background: #292a2f;
+  color: #73747d;
+  width: 100%;
+}
+.bottom_box {
+  width: 1200px;
+  margin: 0 auto;
+  margin-top: 80px;
+}
+.bottom_block {
+  border-bottom: 1px solid #3d3c44;
+  padding-bottom: 30px;
+}
+.copyright span  {
+  display: block;
+  
+}
+.copyright {
+  font-size: 15px;
+  text-align: center;
+}
+.year {
+  padding: 10px 15px;
+  font-size: 15px;
+  font-weight: 700;
+  background: #242529;
+  color: #3e3f42;
+}
+.bottom_add {
+  font-size: 15px;
+  text-decoration: none;
+  float: right;
+  margin-left: 30px;
+  color: #73747d;
+}
+.year {
+  display: inline-block;
+  padding: 6px 13px;
+  font-size: 15px;
+  font-weight: 700;
+  background: #242529;
+  color: #3e3f42;
+  margin-top: 25px;
+  margin-bottom: 50px;
+  border-radius: 15px;
+  float: left;
+}
+.up {
+  display: inline-block;
+  padding: 7px 13px;
+  font-size: 13px;
+  font-weight: 700;
+  background: #242529;
+  color: #3e3f42;
+  margin-top: 25px;
+  margin-bottom: 50px;
+  border-radius: 15px;
+  float: right;
+  text-decoration: none;
+  -webkit-transition: 0s;
+  transition: 0s;
+}
+.up:hover {
+  background: #333438;
+  color: #505050;
+}
+/* ОБ ИГРЕ */
+.copyright {
+  width: 100%;
+  height: 35px;
+  position: absolute;
+  margin-bottom: 2%;
+  bottom: 0;
+  text-align: center;
+  color: #808080;
+  font-weight: 300;
+  font-size: 16px;
+}
+@media (max-width: 860px) {
+  .copyright {
+    font-size: 13px;
+    bottom: 15px;
+  }
+}
+.how-to-play {
+  z-index: 3;
+  background: #202020;
+}
+.how-to-play__wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  padding: 15px;
+  text-align: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  min-height: 700px;
+}
+@media (max-width: 860px) {
+  .how-to-play__wrapper {
+    padding-top: 65px;
+  }
+}
+@media (max-width: 860px) {
+}
+.how-to-play__title {
+  color: #505050;
+  font-family: "Proxima Nova Light";
+  font-size: 60px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  width: 100%;
+  margin-bottom: 10px;
+}
+@media (max-width: 860px) {
+  .how-to-play__title {
+    font-size: 30px;
+    margin-bottom: 20px;
+    margin-top: 40px;
+  }
+}
+.how-to-play__list {
+  width: 100%;
+  text-align: center;
+}
+.how-to-play__item {
+  width: 230px;
+  margin: 30px;
+  position: relative;
+  text-align: left;
+  display: inline-block;
+  vertical-align: top;
+}
+.how-to-play__item-title {
+  color: #505050;
+  font-family: "Proxima Nova";
+  font-size: 24px;
+  margin-bottom: 18px;
+  text-transform: uppercase;
+  position: relative;
+}
+.how-to-play__item-title span {
+  position: absolute;
+  left: -36px;
+  top: 4px;
+  width: 23px;
+  height: 23px;
+  border-radius: 50%;
+  background-color: #505050;
+  line-height: 23px;
+  text-align: center;
+  color: #202020;
+  font-family: "Proxima Nova Bold";
+  font-size: 10px;
+}
+.how-to-play__item-text {
+  color: #505050;
+  font-family: "Proxima Nova Light";
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+.button3 {
+  display: inline-block;
+  line-height: 38px;
+  height: 38px;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-radius: 21px;
+  padding: 0 27px;
+  color: #505050;
+  font-family: "Proxima Nova";
+  font-size: 13px;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+.how-to-play__item-btn {
+  display: inline-block;
+  line-height: 38px;
+  height: 38px;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-radius: 21px;
+  padding: 0 27px;
+  color: #505050;
+  font-family: "Proxima Nova";
+  font-size: 13px;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+.how-to-play__item-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+.how-to-play__img {
+  display: inline-block;
+  width: 136px;
+  height: 136px;
+  margin: 0 0 40px 0;
+}
+@media (max-width: 860px) {
+  .how-to-play__img {
+    margin-bottom: 15px;
+  }
+}
+.check {
+  display: inline;
+}
+.info {
+  z-index: 3;
+}
+.info__wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  padding: 15px 0;
+  text-align: center;
+  background: #505050;
+  max-width: 100%;
+  overflow: hidden;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  min-height: 700px;
+  max-height: 100%;
+  padding-top: 55px;
+}
+@media (max-width: 860px) {
+  .info__wrapper {
+    padding-top: 105px;
+  }
+}
+@media (max-width: 860px) {
+  .info {
+    padding: 95px 0 45px;
+  }
+}
+.info__nav {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 525px;
+          flex: 0 0 525px;
+}
+@media (max-width: 860px) {
+  .info__nav {
+    margin-left: -145px;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 525px;
+            flex: 0 0 525px;
+  }
+}
+.info__content {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 435px;
+          flex: 0 0 435px;
+  width: 435px;
+  margin: 30px;
+  text-align: left;
+  padding-left: 50px;
+}
+@media (max-width: 860px) {
+  .info__content {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 300px;
+            flex: 0 0 300px;
+    padding-left: 0;
+    margin: 10px;
+    width: 300px;
+  }
+}
+.info__text {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  color: #3f3f3f;
+  font-family: "Proxima Nova Light";
+  font-size: 22px;
+}
+@media (max-width: 860px) {
+  .info__text {
+    font-size: 18px;
+  }
+}
+.info__title {
+  color: #3f3f3f;
+  font-family: "Proxima Nova Light";
+  font-size: 60px;
+  text-transform: uppercase;
+  line-height: 1.1em;
+  letter-spacing: 1px;
+}
+@media (max-width: 860px) {
+  .info__title {
+    font-size: 30px;
+    margin-top: 45px;
+  }
+}
+.info__title span {
+  display: block;
+}
+.info__tab_1 .info__title span {
+  color: #0ac0d0;
+}
+.info__tab_2 .info__title span {
+  color: #606f85;
+}
+.info__tab_3 .info__title span {
+  color: #1a4f15;
+}
+.info__tab_4 .info__title span {
+  color: #0069d5;
+}
+.info__tab_5 .info__title span {
+  color: #f32959;
+}
+.info__tab_6 .info__title span {
+  color: #326f49;
+}
+.info__tab_7 .info__title span {
+  color: #495a79;
+}
+@media (max-width: 860px) {
+  .info__title {
+    margin-bottom: 30px;
+  }
+}
+.info__nav {
+  background: url("http://erbaev.ru/template/img/ellipse.png") no-repeat right top;
+  width: 489px;
+  height: 467px;
+  position: relative;
+}
+.info__nav-link {
+  position: absolute;
+  width: 66px;
+  height: 66px;
+  display: block;
+  opacity: 1;
+}
+.info__nav-link_1 {
+  background: url("http://erbaev.ru/template/img/nav1.png") no-repeat;
+  top: -33px;
+  right: 195px;
+  background-size: 66px;
+}
+.info__nav-link_2 {
+  background: url("http://erbaev.ru/template/img/nav2.png") no-repeat;
+  top: 0;
+  right: 90px;
+  background-size: 66px;
+}
+.info__nav-link_3 {
+  background: url("http://erbaev.ru/template/img/nav3.png") no-repeat;
+  top: 70px;
+  right: 0;
+  background-size: 66px;
+}
+.info__nav-link_4 {
+  background: url("http://erbaev.ru/template/img/nav4.png") no-repeat;
+  top: 190px;
+  right: -33px;
+  background-size: 66px;
+}
+.info__nav-link_5 {
+  background: url("http://erbaev.ru/template/img/nav5.png") no-repeat;
+  top: 315px;
+  right: -5px;
+  background-size: 66px;
+}
+.info__nav-link_6 {
+  background: url("http://erbaev.ru/template/img/nav6.png") no-repeat;
+  top: 395px;
+  right: 75px;
+  background-size: 66px;
+}
+.info__nav-link_7 {
+  background: url("http://erbaev.ru/template/img/nav7.png") no-repeat;
+  top: 430px;
+  right: 195px;
+  background-size: 66px;
+}
+.info__nav-link:hover {
+  opacity: 0.85;
+}
+.info__nav-link_1.active {
+  background: url("http://erbaev.ru/template/img/nav1-a.png") no-repeat;
+}
+.info__nav-link_2.active {
+  background: url("http://erbaev.ru/template/img/nav2-a.png") no-repeat;
+}
+.info__nav-link_3.active {
+  background: url("http://erbaev.ru/template/img/nav3-a.png") no-repeat;
+}
+.info__nav-link_4.active {
+  background: url("http://erbaev.ru/template/img/nav4-a.png") no-repeat;
+}
+.info__nav-link_5.active {
+  background: url("http://erbaev.ru/template/img/nav5-a.png") no-repeat;
+}
+.info__nav-link_6.active {
+  background: url("http://erbaev.ru/template/img/nav6-a.png") no-repeat;
+}
+.info__nav-link_7.active {
+  background: url("http://erbaev.ru/template/img/nav7-a.png") no-repeat;
+}
+.info__nav-link.active {
+  margin-right: -50px;
+  margin-top: -50px;
+  width: 167px;
+  height: 167px;
+  background-size: 167px;
+}
+.info__nav-link.active:hover {
+  opacity: 1;
+  cursor: default;
+}
+.info__img {
+  position: absolute;
+  left: 30px;
+  top: 75px;
+}
+@media (max-width: 860px) {
+  .info__img {
+    left: 130px;
+  }
+}
+.section {
+  min-height: 655px;
+}
+.section + .section {
+  overflow: hidden;
+  min-height: 700px;
+  padding-top: 45px;
+  box-sizing: border-box;
+
+}
+@media (max-width: 860px) {
+  .section {
+    padding-top: 0;
+  }
+}
+ection + .section {
+  overflow: hidden;
+  min-height: 700px;
+  padding-top: 45px;
+  box-sizing: border-box;
+
+}
+@media (max-width: 860px) {
+  .section {
+    padding-top: 0;
+  }
+}
+0;
+  }
+}
