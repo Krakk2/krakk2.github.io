@@ -1,0 +1,116 @@
+$$r(function() {
+$(document).ready(function() {
+ $('#open-vhod').show();
+ $('#close-vhod').show();
+ $('#block-vhod').hide();
+ $('.block-vhod').hide();
+ $('#open-vhod').click(function(event) {
+ event.preventDefault(); // Чтобы при нажатии на ссылку не кидало вверх
+ $('#block-vhod').slideToggle();
+ });
+ $('#close-vhod').click(function(event) {
+ event.preventDefault(); // Чтобы при нажатии на ссылку не кидало вверх
+ $('.block-vhod').slideToggle();
+ });
+ $('#close-vhod2').click(function(event) {
+ event.preventDefault(); // Чтобы при нажатии на ссылку не кидало вверх
+ $('.block-vhod').slideToggle();
+ });
+ $('#close-vhod3').click(function(event) {
+ event.preventDefault(); // Чтобы при нажатии на ссылку не кидало вверх
+ $('.block-vhod').slideToggle();
+ });
+ });
+
+
+
+ function onoff(t){
+ div=document.getElementById(t);
+ if(div.style.display=="block"){
+ div.style.display="none";
+ }
+ else{
+ div.style.display="none";}
+ }
+ $(document).ready(function() {
+ $('#open-close').show();
+ $('#block-links').hide();
+ $('#open-close').click(function(event) {
+ event.preventDefault(); // Для того чтобы при нажатии на ссылку не кидало вверх
+ $('#block-links').slideToggle();
+ });
+ });
+
+ 
+ $(function () { // Когда страница загрузится
+ $('.navbar-nav a').each(function () { // получаем все нужные нам ссылки
+ var location = window.location.href; // получаем адрес страницы
+ var link = this.href; // получаем адрес ссылки
+ if(location == link) { // при совпадении адреса ссылки и адреса окна
+ $(this).addClass('active2'); //добавляем класс
+ }
+ });
+});
+
+    
+
+
+
+
+
+
+$(document).ready(function(){
+  $('body').append('<a href="#" id="go-top" title="Вверх"><i class="fa fa-chevron-up" aria-hidden="true"></i></a>');
+});
+
+$(function() {
+ $.fn.scrollToTop = function() {
+  $(this).hide().removeAttr("href");
+  if ($(window).scrollTop() >= "250") $(this).fadeIn()
+  var scrollDiv = $(this);
+  $(window).scroll(function() {
+   if ($(window).scrollTop() <= "250") $(scrollDiv).fadeOut()
+   else $(scrollDiv).fadeIn()
+  });
+  $(this).click(function() {
+   $("html, body").animate({scrollTop: 0}, "slow")
+  })
+ }
+});
+
+$(function() {
+ $("#go-top").scrollToTop();
+});
+
+
+
+
+ $(window).on('load', function () {
+ var $preloader = $('#page-preloader'),
+ $spinner = $preloader.find('.spinner');
+ $spinner.fadeOut();
+ $preloader.delay(350).fadeOut('slow');
+ });    
+
+ $( "#go_to_bay" ).click(function() { 
+      $(window).on('load', function () {
+ var $preloader = $('#page-preloader'),
+ $spinner = $preloader.find('.spinner');
+ $spinner.fadeOut();
+ $preloader.delay(350).fadeOut('slow');
+ });  
+	 });
+
+ $('body').show();
+ $('.version').text(NProgress.version);
+ NProgress.start();
+ setTimeout(function() { NProgress.done(); $('.fade').removeClass('out'); }, 2000);
+ 
+ $("#b-0").click(function() { NProgress.start(); });
+ $("#b-40").click(function() { NProgress.set(0.4); });
+ $("#b-inc").click(function() { NProgress.inc(); });
+ $("#b-100").click(function() { NProgress.done(); });
+
+});
+
+
